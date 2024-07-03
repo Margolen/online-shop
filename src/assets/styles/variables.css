@@ -1,0 +1,16 @@
+:root {
+  --button-base-color: #f14f4f;
+  --button-hover-color: #8c2828;
+  --button-disabled-color: #f8afaf;
+
+  --navlink-active-color: #c4c4c4;
+  --navlink-base-color: #ffffff;
+  --input-base-color: #f6f6f6;
+
+  --font-family-base: Jost;
+  --text-color-base: #444b58;
+  --text-size-base: 1rem;
+  --h1-size: 2.25rem;
+  --price-size: 1.125rem;
+  --faq-size: 1.25rem;
+}

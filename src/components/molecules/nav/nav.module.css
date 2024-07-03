@@ -1,0 +1,10 @@
+.nav {
+  background-color: #484283;
+  color: var(--navlink-base-color);
+  font-weight: 600;
+}
+
+.navList {
+  display: flex;
+  gap: 40px;
+}
