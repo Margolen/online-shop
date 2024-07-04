@@ -13,7 +13,9 @@ export function Card() {
 
   return (
     <div className={styles.card}>
-      <img className={styles.card__img} src={itemImage} alt="item image" />
+      <div className={styles.card__overlay}>
+        <img src={itemImage} alt="item" />
+      </div>
       <div className={styles.card__description}>
         <span className={styles.card__text}>
           <span className={styles.card__text_title}>Essence Mascara Lash Princess</span>
