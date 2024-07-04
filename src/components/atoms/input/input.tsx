@@ -6,9 +6,11 @@ export interface InputProps {
 }
 
 export function Input({ text, className }: InputProps) {
+  const classNames = className ? `${styles.input} ${className}` : styles.input;
+
   return (
     <input
-      className={styles.input}
+      className={classNames}
       type="search"
       placeholder="Search by title"
       defaultValue={text || ''}
