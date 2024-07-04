@@ -1,8 +1,7 @@
 .button {
-  display: block;
-  max-width: fit-content;
-  text-align: center;
-  padding: 16px 50px;
+  display: grid;
+  place-items: center;
+  height: 100%;
   border-radius: 4px;
   background-color: var(--button-base-color);
   color: #ffffff;
@@ -15,7 +14,6 @@
 
   &:disabled {
     background-color: var(--button-disabled-color);
-
     box-shadow: none;
   }
 }

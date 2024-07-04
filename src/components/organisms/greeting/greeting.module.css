@@ -40,8 +40,10 @@
 }
 
 .greeting__button {
+  font-weight: 400;
   margin: 0;
   width: fit-content;
   max-width: 100%;
   z-index: 1;
+  padding: 20px 50px;
 }

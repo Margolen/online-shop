@@ -1,9 +1,9 @@
-import './input.module.css';
+import styles from './input.module.css';
 
 export interface InputProps {
-  text: string;
+  text?: string;
 }
 
-export default function Input({ text }: InputProps) {
-  return <input type="search" placeholder="Search by title" value={text} />;
+export function Input({ text }: InputProps) {
+  return <input type="search" placeholder="Search by title" defaultValue={text || ''} />;
 }
