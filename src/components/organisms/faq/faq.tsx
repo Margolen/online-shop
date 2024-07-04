@@ -23,7 +23,7 @@ export function FAQ() {
         <h1>FAQ</h1>
         <div>
           {faqData.map((faq, index) => (
-            <Accordion key={index} question={faq.question} answer={faq.answer} />
+            <Accordion key={index} {...faq} />
           ))}
         </div>
       </Container>
