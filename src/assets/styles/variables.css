@@ -7,7 +7,9 @@
 
   --navlink-active-color: #c4c4c4;
   --navlink-base-color: #ffffff;
-  --input-base-color: #f6f6f6;
+  --input-base-background-color: #f6f6f6;
+  --input-base-text-color: #b2b5bb;
+  --input-base-active-color: #444b58;
 
   --font-family-base: Jost;
   --text-color-base: #444b58;
