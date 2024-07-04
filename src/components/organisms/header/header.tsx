@@ -1,6 +1,6 @@
 import { Logo } from '../../atoms/logo/logo';
 import { Nav } from '../../molecules/nav/nav';
-import { Container } from '../../templates/layout/container';
+import { Container } from '../../templates/container/container';
 
 import styles from './header.module.css';
 

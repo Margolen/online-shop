@@ -1,17 +1,9 @@
 import './App.css';
 
-import { Header } from './components/organisms/header/header';
-import { Greeting } from './components/organisms/greeting/greeting';
-import { Catalog } from './components/organisms/catalog/catalog';
+import { HomePage } from './components/pages/home/home';
 
 function App() {
-  return (
-    <>
-      <Header />
-      <Greeting />
-      <Catalog />
-    </>
-  );
+  return <HomePage />;
 }
 
 export default App;

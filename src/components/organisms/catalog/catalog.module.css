@@ -1,0 +1,12 @@
+.catalog {
+  display: grid;
+  gap: 48px;
+  margin: 48px 0;
+}
+
+.catalog__table {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 100%;
+  grid-gap: 20px 36px;
+}

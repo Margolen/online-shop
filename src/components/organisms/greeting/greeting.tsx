@@ -1,5 +1,5 @@
 import { Button } from '../../atoms/button/button';
-import { Container } from '../../templates/layout/container';
+import { Container } from '../../templates/container/container';
 
 import styles from './greeting.module.css';
 
