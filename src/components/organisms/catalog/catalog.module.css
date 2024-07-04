@@ -10,3 +10,9 @@
   width: 100%;
   grid-gap: 20px 36px;
 }
+
+.catalog__show_more {
+  margin: 0 auto;
+  padding: 20px 50px;
+  width: fit-content;
+}

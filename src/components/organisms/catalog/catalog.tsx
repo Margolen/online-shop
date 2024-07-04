@@ -1,6 +1,7 @@
 import { Input } from '../../atoms/input/input';
 import { Card } from '../../molecules/card/card';
 import { Container } from '../../templates/container/container';
+import { Button } from '../../atoms/button/button';
 
 import styles from './catalog.module.css';
 
@@ -17,6 +18,7 @@ export function Catalog() {
             <Card key={item} />
           ))}
         </div>
+        <Button className={styles.catalog__show_more}>Show more</Button>
       </Container>
     </section>
   );
