@@ -1,5 +1,8 @@
 import { useState } from 'react';
 
+import crossIcon from '../../../assets/images/icons/cross.svg';
+import plusIcon from '../../../assets/images/icons/plus.svg';
+
 import styles from './accordion.module.css';
 
 interface AccordionItemProps {
@@ -20,9 +23,14 @@ export function AccordionItem({ question, answer }: AccordionItemProps) {
 
   return (
     <div className={styles.accordion__item}>
-      <p className={stylesAccordionQuestion} onClick={toggleAccordion}>
+      <span className={stylesAccordionQuestion} onClick={toggleAccordion}>
         {question}
-      </p>
+        <img
+          className={styles.accordion__button}
+          src={isOpen ? crossIcon : plusIcon}
+          alt={isOpen ? 'close' : 'open'}
+        />
+      </span>
       {isOpen && <p className={styles.accordion__content}>{answer}</p>}
     </div>
   );

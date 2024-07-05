@@ -2,7 +2,6 @@
   display: grid;
   color: white;
   border-top: 1px solid #ffffff;
-  overflow: hidden;
   gap: 25px;
   padding: 25px 0;
 }
@@ -13,13 +12,20 @@
 }
 
 .accordion__question {
+  display: flex;
   cursor: pointer;
   border: 1px solid transparent;
   transition: background-color 0.3s;
+  justify-content: space-between;
 }
 
 .accordion__content {
   cursor: pointer;
+}
+
+.accordion__button {
+  width: 25px;
+  height: 25px;
 }
 
 .open {
