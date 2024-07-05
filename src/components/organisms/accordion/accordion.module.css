@@ -1,13 +1,27 @@
 .accordion__item {
-  background-color: lightgray;
-  padding: 1rem 2rem;
-  margin: 0 auto;
-  width: 50%;
+  display: grid;
+  color: white;
+  border-top: 1px solid #ffffff;
+  overflow: hidden;
+  gap: 25px;
+  padding: 25px 0;
 }
 
-.accordion__header {
-  border: 1px solid #000;
-  padding: 1rem;
-  border-radius: 5px;
+.accordion__container {
+  display: flex;
+  flex-direction: column;
+}
+
+.accordion__question {
   cursor: pointer;
+  border: 1px solid transparent;
+  transition: background-color 0.3s;
+}
+
+.accordion__content {
+  cursor: pointer;
+}
+
+.open {
+  background: red;
 }

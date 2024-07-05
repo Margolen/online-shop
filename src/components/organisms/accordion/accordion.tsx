@@ -1,32 +1,29 @@
 import { useState } from 'react';
-import { Container } from '../../templates/container/container';
 
 import styles from './accordion.module.css';
 
-interface AccordionProps {
+interface AccordionItemProps {
   question: string;
   answer: React.ReactNode;
 }
 
-export function Accordion({ question, answer }: AccordionProps) {
+export function AccordionItem({ question, answer }: AccordionItemProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleAccordion = () => {
     setIsOpen(!isOpen);
   };
 
-  const stylesAccordionHeader = isOpen
-    ? `${styles.accordion__header} ${styles.open}`
-    : `${styles.accordion__header}`;
+  const stylesAccordionQuestion = isOpen
+    ? `${styles.accordion__question} ${styles.open}`
+    : `${styles.accordion__question}`;
 
   return (
     <div className={styles.accordion__item}>
-      <Container className={styles.accordion__container}>
-        <div className={stylesAccordionHeader} onClick={toggleAccordion}>
-          {question}
-        </div>
-        {isOpen && <div className={styles.accordion__content}>{answer}</div>}
-      </Container>
+      <p className={stylesAccordionQuestion} onClick={toggleAccordion}>
+        {question}
+      </p>
+      {isOpen && <p className={styles.accordion__content}>{answer}</p>}
     </div>
   );
 }

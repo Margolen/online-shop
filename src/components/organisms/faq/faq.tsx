@@ -1,5 +1,7 @@
-import { Accordion } from '../accordion/accordion';
+import { AccordionItem } from '../accordion/accordion';
 import { Container } from '../../templates/container/container';
+
+import styles from './faq.module.css';
 
 export function FAQ() {
   const faqData = [
@@ -18,13 +20,15 @@ export function FAQ() {
     },
   ];
   return (
-    <section>
-      <Container>
-        <h1>FAQ</h1>
-        <div>
-          {faqData.map((faq, index) => (
-            <Accordion key={index} {...faq} />
-          ))}
+    <section className={styles.faq}>
+      <Container className={styles.faq__container}>
+        <div className={styles.faq__inner}>
+          <h1 className={styles.faq__title}>FAQ</h1>
+          <div>
+            {faqData.map((faq, index) => (
+              <AccordionItem key={index} {...faq} />
+            ))}
+          </div>
         </div>
       </Container>
     </section>

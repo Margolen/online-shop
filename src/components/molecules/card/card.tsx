@@ -14,7 +14,7 @@ export function Card() {
   return (
     <div className={styles.card}>
       <div className={styles.card__overlay}>
-        <img src={itemImage} alt="item" />
+        <img loading="lazy" src={itemImage} alt="item" />
       </div>
       <div className={styles.card__description}>
         <span className={styles.card__text}>
