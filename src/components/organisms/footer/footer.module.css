@@ -1,0 +1,17 @@
+.footer {
+  background-color: var(--footer-backgound-color);
+}
+
+.footer__bar {
+  display: flex;
+  align-items: center;
+  padding: 23px 0;
+}
+
+.logo {
+  color: #ffffff;
+}
+
+.nav {
+  margin-left: auto;
+}

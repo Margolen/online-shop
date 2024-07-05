@@ -1,4 +1,5 @@
 import { Header } from '../../organisms/header/header';
+import { Footer } from '../../organisms/footer/footer';
 
 import styles from './layout.module.css';
 
@@ -14,6 +15,7 @@ export function MainLayout({ children, className }: MainLayoutProps) {
     <main className={classNames}>
       <Header />
       {children}
+      <Footer />
     </main>
   );
 }
