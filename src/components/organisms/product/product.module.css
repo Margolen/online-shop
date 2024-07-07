@@ -10,6 +10,16 @@
   height: 520px;
 }
 
+.product__stars {
+  display: flex;
+  gap: 4px;
+}
+
+.product__stars img {
+  width: 20px;
+  height: 20px;
+}
+
 .product__images {
   display: flex;
   flex-direction: column;

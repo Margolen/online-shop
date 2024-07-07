@@ -1,4 +1,6 @@
 import mainImage from '../../../assets/images/main.png';
+import starIcon from '../../../assets/images/icons/star.svg';
+import starDisabledIcon from '../../../assets/images/icons/star-disabled.svg';
 import { Button } from '../../atoms/button/button';
 import { Container } from '../../templates/container/container';
 
@@ -22,10 +24,12 @@ export function Product() {
           <h1 className={styles.product__title}>Essence Mascara Lash Princess</h1>
           <div className={styles.product__meta}>
             <div className={styles.product__score}>
-              <div className={styles.stars}>
-                <span className={styles.scale}></span>
-                <span className={styles.rating}></span>
-                <span className={styles.hidden}>Rating: 4 out of 5 stars</span>
+              <div className={styles.product__stars}>
+                <img src={starIcon} alt="star" />
+                <img src={starIcon} alt="star" />
+                <img src={starIcon} alt="star" />
+                <img src={starIcon} alt="star" />
+                <img src={starDisabledIcon} alt="star" />
               </div>
             </div>
             <div className={styles.product__categories}>electronics, selfie accessories</div>
