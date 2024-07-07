@@ -1,0 +1,24 @@
+:root {
+  --button-base-color: #f14f4f;
+  --button-hover-color: #8c2828;
+  --button-focus-color: #f8afaf;
+
+  --base-background-color: #484283;
+  --footer-backgound-color: #444b58;
+
+  --navlink-base-color: #ffffff;
+  --navlink-hover-color: #c4c4c4;
+
+  --input-base-background-color: #f6f6f6;
+  --input-base-text-color: #b2b5bb;
+  --input-base-active-color: #444b58;
+
+  --font-family-base: Jost;
+  --text-color-base: #444b58;
+  --text-size-base: 1rem;
+  --h1-size: 36px;
+  --text-size: 1.125rem;
+  --faq-size: 1.25rem;
+
+  --border-color: #c4c4c4;
+}

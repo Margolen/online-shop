@@ -1,0 +1,9 @@
+.nav {
+  color: var(--navlink-base-color);
+  font-weight: 600;
+}
+
+.nav__list {
+  display: flex;
+  gap: 40px;
+}

@@ -1,0 +1,51 @@
+.greeting {
+  position: relative;
+  background-color: var(--base-background-color);
+  color: #fff;
+  padding: 115px 0;
+  z-index: 0;
+
+  &::before {
+    content: 'Goods4you';
+    display: grid;
+    place-items: center;
+    position: absolute;
+    inset: 0;
+    font-size: 200px;
+    line-height: 300px;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.12);
+    z-index: -1;
+  }
+}
+
+.greeting__container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  z-index: 1;
+}
+
+.greeting__title {
+  font-size: var(--h1-size);
+  font-weight: 400;
+  margin: 0;
+  max-width: 580px;
+  line-height: 50px;
+}
+
+.greeting__text {
+  max-width: 350px;
+  margin: 0;
+  font-weight: 600;
+  line-height: 24px;
+}
+
+.greeting__button {
+  font-weight: 400;
+  margin: 0;
+  width: fit-content;
+  max-width: 100%;
+  z-index: 1;
+  padding: 20px 50px;
+}

@@ -1,0 +1,10 @@
+.bar__container {
+  background-color: var(--base-background-color);
+  width: 100%;
+}
+
+.bar {
+  content: '';
+  height: 1px;
+  background: #ffffff;
+}

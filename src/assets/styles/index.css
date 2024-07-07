@@ -1,0 +1,41 @@
+@import 'variables.css';
+@import 'normalize.css';
+
+@font-face {
+  font-family: 'Jost';
+  src: url('../fonts/Jost/Jost-VariableFont_wght.ttf');
+}
+
+:root {
+  font-family: var(--font-family-base), Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+main {
+  flex: 1;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  color: var(--text-color-base);
+  font-size: var(--text-size-base);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1 {
+  font-size: var(--h1-size);
+  font-weight: 800;
+}

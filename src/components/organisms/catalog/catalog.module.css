@@ -1,0 +1,18 @@
+.catalog__inner {
+  display: grid;
+  gap: 48px;
+  margin: 48px 0;
+}
+
+.catalog__table {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 100%;
+  grid-gap: 20px 36px;
+}
+
+.catalog__show_more {
+  margin: 0 auto;
+  padding: 20px 50px;
+  width: fit-content;
+}

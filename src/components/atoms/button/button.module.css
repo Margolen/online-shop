@@ -1,0 +1,24 @@
+.button {
+  display: grid;
+  place-items: center;
+  height: 100%;
+  border-radius: 4px;
+  background-color: var(--button-base-color);
+  color: #ffffff;
+  box-shadow: none;
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--button-hover-color);
+  }
+
+  &:focus {
+    background-color: var(--button-hover-color);
+    outline: none;
+    box-shadow: none;
+  }
+
+  &:disabled {
+    background-color: var(--button-focus-color);
+  }
+}

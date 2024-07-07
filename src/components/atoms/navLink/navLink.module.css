@@ -1,0 +1,9 @@
+.nav {
+  color: var(--navlink-base-color);
+}
+
+.nav:hover {
+  color: var(--navlink-hover-color);
+  text-decoration: underline;
+  cursor: pointer;
+}
