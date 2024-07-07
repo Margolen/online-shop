@@ -21,6 +21,7 @@
 
 .accordion__content {
   cursor: pointer;
+  font-weight: 600;
 }
 
 .accordion__button {
@@ -29,5 +30,4 @@
 }
 
 .open {
-  background: red;
 }
