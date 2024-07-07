@@ -15,8 +15,8 @@ export function Catalog() {
           <h1>Catalog</h1>
           <Input />
           <div className={styles.catalog__table}>
-            {items.map((item) => (
-              <Card key={item} />
+            {items.map((_, itemId) => (
+              <Card key={itemId} />
             ))}
           </div>
           <Button className={styles.catalog__show_more}>Show more</Button>

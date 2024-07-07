@@ -1,3 +1,5 @@
+import { useMemo, useState } from 'react';
+
 import { Logo } from '../../atoms/logo/logo';
 import { NavBar } from '../../molecules/nav/nav';
 import { Container } from '../../templates/container/container';
@@ -6,16 +8,20 @@ import { Cart } from '../../atoms/cart/cart';
 
 import styles from './header.module.css';
 
-const navItems: NavElement[] = [
-  'Catalog',
-  'FAQ',
-  <Cart key="cart" itemCount={1}>
-    Cart
-  </Cart>,
-  'Johnson Smith',
-];
-
 export function Header() {
+  const [numItemsInCart] = useState(1);
+
+  const cart = useMemo(
+    () => (
+      <Cart key="cart" itemCount={numItemsInCart}>
+        Cart
+      </Cart>
+    ),
+    [numItemsInCart]
+  );
+
+  const navItems: NavElement[] = useMemo(() => ['Catalog', 'FAQ', cart, 'Johnson Smith'], [cart]);
+
   return (
     <header className={styles.header}>
       <Container>

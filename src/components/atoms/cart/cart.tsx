@@ -9,12 +9,14 @@ export interface CartProps {
 
 export function Cart({ children, itemCount }: CartProps) {
   return (
-    <div className={styles.cart}>
+    <span className={styles.cart}>
       {children}
-      {/* <div className={styles.cart__container}>
-        <img className={styles.cart__icon} src={cartIcon} alt="cart-icon" />
-        <span className={styles.cart__item_count}>{itemCount}</span>
-      </div> */}
-    </div>
+      <span>
+        <span className={styles.cart__container}>
+          <img className={styles.cart__icon} src={cartIcon} alt="cart" />
+          <sub className={styles.cart__item_count}>{itemCount}</sub>
+        </span>
+      </span>
+    </span>
   );
 }
