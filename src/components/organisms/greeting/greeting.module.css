@@ -5,16 +5,14 @@
 
   &::before {
     content: 'Goods4you';
+    display: grid;
+    place-items: center;
     position: absolute;
-    top: 75%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    inset: 0;
     font-size: 200px;
     line-height: 300px;
-
     font-weight: 700;
     color: rgba(255, 255, 255, 0.12);
-
     z-index: 0;
   }
 }
