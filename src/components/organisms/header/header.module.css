@@ -18,3 +18,8 @@
 .nav {
   margin-left: auto;
 }
+
+.nav li:last-child a:hover {
+  color: var(--navlink-base-color);
+  text-decoration: none;
+}
