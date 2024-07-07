@@ -1,3 +1,5 @@
+import { useNavigate } from 'react-router-dom';
+
 import styles from './logo.module.css';
 
 export interface LogoProps {
@@ -6,5 +8,16 @@ export interface LogoProps {
 }
 
 export function Logo({ children, className }: LogoProps) {
-  return <div className={`${styles.logo} ${className}`}>{children}</div>;
+  const navigate = useNavigate();
+
+  return (
+    <div
+      className={`${styles.logo} ${className}`}
+      onClick={() => {
+        navigate('/');
+      }}
+    >
+      {children}
+    </div>
+  );
 }
