@@ -1,9 +1,27 @@
 import './App.css';
 
-import { HomePage } from './components/pages/home/home';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { MainLayout } from './components/templates/layout/layout';
+import { HomePage } from './components/pages/homePage/homePage';
+import { ProductPage } from './components/pages/productPage/productPage';
+
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <HomePage />,
+  },
+  {
+    path: 'product',
+    element: <ProductPage />,
+  },
+]);
 
 function App() {
-  return <HomePage />;
+  return (
+    <MainLayout>
+      <RouterProvider router={router} />
+    </MainLayout>
+  );
 }
 
 export default App;
