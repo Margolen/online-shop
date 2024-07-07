@@ -1,5 +1,6 @@
 .footer {
   background-color: var(--footer-backgound-color);
+  margin-top: auto;
 }
 
 .footer__bar {
