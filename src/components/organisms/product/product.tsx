@@ -1,4 +1,4 @@
-import itemImage from '../../../assets/images/item.png';
+import mainImage from '../../../assets/images/main.png';
 import { Button } from '../../atoms/button/button';
 import { Container } from '../../templates/container/container';
 
@@ -11,10 +11,10 @@ export function Product() {
     <Container>
       <div className={styles.product__container}>
         <div className={styles.product__images}>
-          <img src={itemImage} alt="item" />
+          <img src={mainImage} alt="item" />
           <div className={styles.product__gallery}>
             {items.map((_, itemId) => (
-              <img key={itemId} src={itemImage} alt="item" />
+              <img key={itemId} src={mainImage} alt="item" />
             ))}
           </div>
         </div>
