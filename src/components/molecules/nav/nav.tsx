@@ -12,9 +12,9 @@ export type NavBarProps = {
 export function NavBar({ className, navItems }: NavBarProps) {
   return (
     <nav className={`${styles.nav} ${className}`}>
-      <ul className={styles.navList}>
+      <ul className={styles.nav__list}>
         {navItems.map((nav, navId) => (
-          <li key={navId} className={styles.navItem}>
+          <li key={navId} className={styles.nav__item}>
             <NavLink>{nav}</NavLink>
           </li>
         ))}
