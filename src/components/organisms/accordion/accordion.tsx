@@ -1,8 +1,4 @@
-import { useState } from 'react';
-
-import crossIcon from '../../../assets/images/icons/cross.svg';
-import plusIcon from '../../../assets/images/icons/plus.svg';
-
+import { useState, useRef } from 'react';
 import styles from './accordion.module.css';
 
 interface AccordionItemProps {
@@ -12,26 +8,34 @@ interface AccordionItemProps {
 
 export function AccordionItem({ question, answer }: AccordionItemProps) {
   const [isOpen, setIsOpen] = useState(false);
+  const contentRef = useRef<HTMLDivElement>(null);
 
   const toggleAccordion = () => {
     setIsOpen(!isOpen);
   };
 
-  const stylesAccordionQuestion = isOpen
-    ? `${styles.accordion__question} ${styles.open}`
-    : `${styles.accordion__question}`;
-
   return (
     <div className={styles.accordion__item}>
-      <span className={stylesAccordionQuestion} onClick={toggleAccordion}>
+      <span className={styles.accordion__question} onClick={toggleAccordion}>
         {question}
-        <img
-          className={styles.accordion__button}
-          src={isOpen ? crossIcon : plusIcon}
-          alt={isOpen ? 'close' : 'open'}
+        <div
+          className={
+            isOpen
+              ? `${styles.accordion__button} ${styles['accordion__button--open']}`
+              : `${styles.accordion__button}`
+          }
         />
       </span>
-      {isOpen && <p className={styles.accordion__content}>{answer}</p>}
+      <span
+        ref={contentRef}
+        className={styles.accordion__content}
+        style={{
+          marginTop: isOpen ? '25px' : 0,
+          maxHeight: isOpen ? `${contentRef.current?.scrollHeight}px` : 0,
+        }}
+      >
+        {answer}
+      </span>
     </div>
   );
 }
