@@ -3,9 +3,12 @@ import { Card } from '../../molecules/card/card';
 import { Container } from '../../templates/container/container';
 import { Button } from '../../atoms/button/button';
 
+import { useNavigate } from 'react-router-dom';
+
 import styles from './catalog.module.css';
 
 export function Catalog() {
+  const navigate = useNavigate();
   const items = [...Array(12)];
 
   return (
@@ -16,7 +19,7 @@ export function Catalog() {
           <Input />
           <div className={styles.catalog__table}>
             {items.map((_, itemId) => (
-              <Card key={itemId} />
+              <Card key={itemId} onClick={() => navigate(`product/${itemId}`)} />
             ))}
           </div>
           <Button className={styles.catalog__show_more}>Show more</Button>

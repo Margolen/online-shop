@@ -8,13 +8,14 @@ import itemImage from '../../../assets/images/item.png';
 
 import styles from './card.module.css';
 
-export function Card() {
+export function Card({ ...props }: React.HTMLAttributes<HTMLElement>) {
   const [itemCounter, setItemCounter] = useState(0);
   const [cardHovered, setCardHovered] = useState(false);
   const [panelHovered, setPanelHovered] = useState(false);
 
   return (
     <div
+      {...props}
       className={styles.card}
       onMouseEnter={() => setCardHovered(true)}
       onMouseLeave={() => setCardHovered(false)}
