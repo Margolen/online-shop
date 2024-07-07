@@ -7,3 +7,8 @@
   display: flex;
   gap: 40px;
 }
+
+.navItem:last-child a:hover {
+  color: var(--navlink-base-color);
+  text-decoration: none;
+}
