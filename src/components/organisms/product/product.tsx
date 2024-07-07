@@ -20,38 +20,38 @@ export function Product() {
         </div>
         <div className={styles.product__info}>
           <h1 className={styles.product__title}>Essence Mascara Lash Princess</h1>
-          <p className={styles.product__meta}>
-            <p className={styles.product__score}>
-              <p className={styles.stars}>
+          <div className={styles.product__meta}>
+            <div className={styles.product__score}>
+              <div className={styles.stars}>
                 <span className={styles.scale}></span>
                 <span className={styles.rating}></span>
                 <span className={styles.hidden}>Rating: 4 out of 5 stars</span>
-              </p>
-            </p>
-            <p className={styles.product__categories}>electronics, selfie accessories</p>
-          </p>
-          <p className={styles.product__availability}>In Stock - Only 5 left!</p>
-          <p className={styles.product__description}>
+              </div>
+            </div>
+            <div className={styles.product__categories}>electronics, selfie accessories</div>
+          </div>
+          <div className={styles.product__availability}>In Stock - Only 5 left!</div>
+          <div className={styles.product__description}>
             The Essence Mascara Lash Princess is a popular mascara known for its volumizing and
             lengthening effects. Achieve dramatic lashes with this long-lasting and cruelty-free
             formula.
-          </p>
-          <p className={styles.product__other_info}>
+          </div>
+          <div className={styles.product__other_info}>
             <p>1 month warranty </p>
             <p>Ships in 1 month</p>
-          </p>
-          <p className={styles.product__buy}>
-            <p className={styles.product__price}>
-              <p className={styles.product__price_info}>
+          </div>
+          <div className={styles.product__buy}>
+            <div className={styles.product__price}>
+              <div className={styles.product__price_info}>
                 <p>7.17$</p>
                 <p>9.99$</p>
-              </p>
-              <p>
+              </div>
+              <div>
                 Your discount: <b>14.5%</b>
-              </p>
-            </p>
+              </div>
+            </div>
             <Button className={styles.product__add}>Add to cart</Button>
-          </p>
+          </div>
         </div>
       </div>
     </Container>
