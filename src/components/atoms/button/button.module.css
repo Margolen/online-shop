@@ -12,8 +12,13 @@
     background-color: var(--button-hover-color);
   }
 
-  &:disabled {
-    background-color: var(--button-disabled-color);
+  &:focus {
+    background-color: var(--button-hover-color);
+    outline: none;
     box-shadow: none;
+  }
+
+  &:disabled {
+    background-color: var(--button-focus-color);
   }
 }

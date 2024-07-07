@@ -31,10 +31,14 @@
   color: #ffffff99;
 }
 
-.card__overlay:hover:before,
-.card__overlay:hover:after {
+.card__overlay__hovered:before,
+.card__overlay__hovered:after {
   opacity: 1;
   cursor: pointer;
+}
+
+.card__text_title__hovered {
+  text-decoration: underline;
 }
 
 .card__description {

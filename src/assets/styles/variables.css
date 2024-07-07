@@ -1,7 +1,7 @@
 :root {
   --button-base-color: #f14f4f;
   --button-hover-color: #8c2828;
-  --button-disabled-color: #f8afaf;
+  --button-focus-color: #f8afaf;
 
   --base-background-color: #484283;
   --footer-backgound-color: #444b58;
