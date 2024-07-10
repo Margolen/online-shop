@@ -48,6 +48,7 @@
 
 .card__text {
   display: grid;
+  cursor: pointer;
 }
 
 .card__text_title {

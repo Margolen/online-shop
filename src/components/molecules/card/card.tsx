@@ -8,7 +8,7 @@ import itemImage from '../../../assets/images/item.png';
 
 import styles from './card.module.css';
 
-export function Card({ ...props }: React.HTMLAttributes<HTMLElement>) {
+export function Card({ onClick, ...props }: React.HTMLAttributes<HTMLElement>) {
   const [itemCounter, setItemCounter] = useState(0);
   const [cardHovered, setCardHovered] = useState(false);
   const [panelHovered, setPanelHovered] = useState(false);
@@ -19,6 +19,11 @@ export function Card({ ...props }: React.HTMLAttributes<HTMLElement>) {
       className={styles.card}
       onMouseEnter={() => setCardHovered(true)}
       onMouseLeave={() => setCardHovered(false)}
+      onClick={(event) => {
+        if (!panelHovered && onClick) {
+          onClick(event);
+        }
+      }}
     >
       <div
         className={
