@@ -10,10 +10,11 @@ import styles from './buttonPanel.module.css';
 
 export interface ButtonPanelProps {
   onHovered?: (status: boolean) => void;
+  initialItemCounter?: number;
 }
 
-export function ButtonPanel({ onHovered }: ButtonPanelProps) {
-  const [itemCounter, setItemCounter] = useState(0);
+export function ButtonPanel({ onHovered, initialItemCounter }: ButtonPanelProps) {
+  const [itemCounter, setItemCounter] = useState(initialItemCounter || 0);
   const [hovered, setHovered] = useState(false);
 
   useEffect(() => {

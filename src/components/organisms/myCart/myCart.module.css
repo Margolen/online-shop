@@ -1,0 +1,29 @@
+.cart__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 696px;
+  padding: 12px;
+
+  &:hover {
+    background-color: var(--cart-item-hover-background-color);
+  }
+}
+
+.cart__item_img {
+  width: 100px;
+  height: 100px;
+}
+
+.cart__item_text {
+  display: flex;
+  flex-direction: column;
+}
+
+.cart__item_text_title {
+  cursor: pointer;
+}
+
+.cart__item_remove {
+  color: #b2b5bb;
+}
