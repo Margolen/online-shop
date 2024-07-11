@@ -10,6 +10,17 @@
   }
 }
 
+.cart__item_deleted {
+  opacity: 0.5;
+}
+
+.cart__item_description {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
 .cart__item_img {
   width: 100px;
   height: 100px;
@@ -26,4 +37,12 @@
 
 .cart__item_remove {
   color: #b2b5bb;
+}
+
+.cart__item_controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 48px;
+  padding: 12px 15px;
 }

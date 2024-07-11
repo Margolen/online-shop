@@ -54,6 +54,7 @@
   line-height: 36px;
   font-size: 24px;
   border-top: 1px solid var(--cart-price-border);
+  padding-top: 9.5px;
 
   .cart__price_count_text {
     font-weight: 600;

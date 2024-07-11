@@ -11,9 +11,10 @@ import styles from './buttonPanel.module.css';
 export interface ButtonPanelProps {
   onHovered?: (status: boolean) => void;
   initialItemCounter?: number;
+  className?: string;
 }
 
-export function ButtonPanel({ onHovered, initialItemCounter }: ButtonPanelProps) {
+export function ButtonPanel({ onHovered, initialItemCounter, className }: ButtonPanelProps) {
   const [itemCounter, setItemCounter] = useState(initialItemCounter || 0);
   const [hovered, setHovered] = useState(false);
 
@@ -23,9 +24,13 @@ export function ButtonPanel({ onHovered, initialItemCounter }: ButtonPanelProps)
     }
   }, [hovered]);
 
+  const classNames = className
+    ? `${styles.card__button_panel} ${className}`
+    : styles.card__button_panel;
+
   return (
     <span
-      className={styles.card__button_panel}
+      className={classNames}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >

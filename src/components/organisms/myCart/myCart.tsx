@@ -1,4 +1,3 @@
-import { Container } from '../../templates/container/container';
 import { CartItem } from '../cartItem/cartItem';
 
 import styles from './myCart.module.css';

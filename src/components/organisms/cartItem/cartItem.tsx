@@ -12,21 +12,27 @@ interface CartItemProps {
 
 export function CartItem({ itemId, itemCounter }: CartItemProps) {
   const navigate = useNavigate();
+  const classNames =
+    itemCounter !== 0 ? styles.cart__item : `${styles.cart__item} ${styles.cart__item_deleted}`;
 
   return (
-    <div className={styles.cart__item}>
-      <img className={styles.cart__item_img} loading="lazy" src={itemImage} alt="item" />
-      <div className={styles.cart__item_text}>
-        <span
-          className={styles.cart__item_text_title}
-          onClick={() => navigate(`/product/${itemId}`)}
-        >
-          Essence Mascara Lash Princess
-        </span>
-        <span>110 $</span>
+    <div className={classNames}>
+      <div className={styles.cart__item_description}>
+        <img className={styles.cart__item_img} loading="lazy" src={itemImage} alt="item" />
+        <div className={styles.cart__item_text}>
+          <span
+            className={styles.cart__item_text_title}
+            onClick={() => navigate(`/product/${itemId}`)}
+          >
+            <b>Essence Mascara Lash Princess</b>
+          </span>
+          <span>110 $</span>
+        </div>
       </div>
-      <ButtonPanel initialItemCounter={itemCounter} />
-      <NavLink className={styles.cart__item_remove}>Delete</NavLink>
+      <div className={styles.cart__item_controls}>
+        <ButtonPanel initialItemCounter={itemCounter} />
+        {itemCounter !== 0 && <NavLink className={styles.cart__item_remove}>Delete</NavLink>}
+      </div>
     </div>
   );
 }
