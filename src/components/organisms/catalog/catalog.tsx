@@ -1,7 +1,9 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 
 import { useNavigate } from 'react-router-dom';
 import { Element } from 'react-scroll';
+
+import { debounce } from 'lodash';
 
 import { Input } from '../../atoms/input/input';
 import { Card } from '../../molecules/card/card';
@@ -20,6 +22,10 @@ export function Catalog() {
   const { data } = useGetProductByNameQuery(searchField);
   const products = useMemo(() => (data?.products || []) as Product[], [data]);
 
+  const handleChangeSearchField = debounce((event: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchField(event.target.value);
+  }, 500);
+
   return (
     <Element name="catalog">
       <Container>
@@ -29,7 +35,7 @@ export function Catalog() {
             type="search"
             placeholder="Search by title"
             defaultValue={searchField}
-            onChange={(event) => setSearchField(event.target.value)}
+            onChange={handleChangeSearchField}
           />
           <div className={styles.catalog__table}>
             {products.map((product) => (
