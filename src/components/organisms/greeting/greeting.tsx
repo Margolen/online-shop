@@ -1,3 +1,5 @@
+import { scroller } from 'react-scroll';
+
 import { Button } from '../../atoms/button/button';
 import { Container } from '../../templates/container/container';
 
@@ -13,7 +15,17 @@ export function Greeting() {
         <p className={styles.greeting__text}>
           We sell smartphones, laptops, clothes, shoes and many other products at low prices
         </p>
-        <Button className={styles.greeting__button}>Go to shopping</Button>
+        <Button
+          className={styles.greeting__button}
+          onClick={() =>
+            scroller.scrollTo('catalog', {
+              duration: 500,
+              smooth: true,
+            })
+          }
+        >
+          Go to shopping
+        </Button>
       </Container>
     </section>
   );
