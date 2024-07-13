@@ -33,7 +33,7 @@ export function Card({ onClick, product, ...props }: CardProps) {
             : styles.card__overlay
         }
       >
-        <img loading="lazy" src={product.thumbnail} alt="item" />
+        <img className={styles.card__thumbnail} loading="lazy" src={product.thumbnail} alt="item" />
       </div>
       <div className={styles.card__description}>
         <span className={styles.card__text}>
