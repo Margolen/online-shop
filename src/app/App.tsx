@@ -1,9 +1,9 @@
 import './App.css';
 
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import { HomePage } from './components/pages/homePage/homePage';
-import { ProductPage } from './components/pages/productPage/productPage';
-import { CartPage } from './components/pages/cartPage/cartPage';
+import { HomePage } from '../components/pages/homePage/homePage';
+import { ProductPage } from '../components/pages/productPage/productPage';
+import { CartPage } from '../components/pages/cartPage/cartPage';
 
 const router = createBrowserRouter([
   {
@@ -21,7 +21,11 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
-  return <RouterProvider router={router} />;
+  return (
+    <>
+      <RouterProvider router={router} />
+    </>
+  );
 }
 
 export default App;

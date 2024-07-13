@@ -1,19 +1,8 @@
 import styles from './input.module.css';
 
-export interface InputProps {
-  text?: string;
-  className?: string;
-}
+export interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {}
 
-export function Input({ text, className }: InputProps) {
+export function Input({ className, ...props }: InputProps) {
   const classNames = className ? `${styles.input} ${className}` : styles.input;
-
-  return (
-    <input
-      className={classNames}
-      type="search"
-      placeholder="Search by title"
-      defaultValue={text || ''}
-    />
-  );
+  return <input className={classNames} {...props} />;
 }

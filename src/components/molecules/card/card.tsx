@@ -1,14 +1,18 @@
 import { useState } from 'react';
 
 import { ButtonPanel } from '../buttonPanel/buttonPanel';
-
-import itemImage from '../../../assets/images/item.png';
+import { Product } from '../../../services/product';
 
 import styles from './card.module.css';
 
-export function Card({ onClick, ...props }: React.HTMLAttributes<HTMLElement>) {
+interface CardProps extends React.HTMLAttributes<HTMLElement> {
+  product: Product;
+}
+
+export function Card({ onClick, product, ...props }: CardProps) {
   const [cardHovered, setCardHovered] = useState(false);
   const [panelHovered, setPanelHovered] = useState(false);
+  const price = product.price * (1.0 - product.discountPercentage * 0.01);
 
   return (
     <div
@@ -29,7 +33,7 @@ export function Card({ onClick, ...props }: React.HTMLAttributes<HTMLElement>) {
             : styles.card__overlay
         }
       >
-        <img loading="lazy" src={itemImage} alt="item" />
+        <img loading="lazy" src={product.thumbnail} alt="item" />
       </div>
       <div className={styles.card__description}>
         <span className={styles.card__text}>
@@ -40,9 +44,9 @@ export function Card({ onClick, ...props }: React.HTMLAttributes<HTMLElement>) {
                 : styles.card__text_title
             }
           >
-            Essence Mascara Lash Princess
+            {product.title}
           </span>
-          <span>110 $</span>
+          <span>{price.toFixed(2)} $</span>
         </span>
         <ButtonPanel onHovered={setPanelHovered} />
       </div>
