@@ -5,7 +5,10 @@ import { NavElement } from '../../molecules/nav/nav';
 
 import styles from './footer.module.css';
 
-const navItems: NavElement[] = ['Catalog', 'FAQ'];
+const navItems: NavElement[] = [
+  { path: '/', name: 'catalog', content: 'Catalog' },
+  { path: '/', name: 'faq', content: 'FAQ' },
+];
 
 export function Footer() {
   return (

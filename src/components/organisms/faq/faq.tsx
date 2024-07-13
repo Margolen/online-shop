@@ -1,3 +1,5 @@
+import { Element } from 'react-scroll';
+
 import { AccordionItem } from '../accordion/accordion';
 import { Container } from '../../templates/container/container';
 
@@ -20,7 +22,7 @@ export function FAQ() {
     },
   ];
   return (
-    <section className={styles.faq}>
+    <Element name="faq" className={styles.faq}>
       <Container className={styles.faq__container}>
         <div className={styles.faq__inner}>
           <h1 className={styles.faq__title}>FAQ</h1>
@@ -31,6 +33,6 @@ export function FAQ() {
           </div>
         </div>
       </Container>
-    </section>
+    </Element>
   );
 }
