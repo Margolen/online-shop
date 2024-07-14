@@ -6,11 +6,29 @@ export type Product = {
   thumbnail: string;
   price: number;
   discountPercentage: number;
+  discountTotal: number;
   category: string;
+  quantity: number;
+  total: number;
 };
 
 export type Products = {
   products: Product[];
+  total: number;
+};
+
+export type Cart = {
+  id: number;
+  discountedTotal: number;
+  total: number;
+  totalProducts: number;
+  totalQuantity: number;
+  userId: number;
+  products: Product[];
+};
+
+export type Carts = {
+  carts: Carts[];
   total: number;
 };
 

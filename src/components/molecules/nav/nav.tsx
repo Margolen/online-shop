@@ -4,6 +4,8 @@ import { scroller } from 'react-scroll';
 import { NavLink } from '../../atoms/navLink/navLink';
 import { Cart } from '../../atoms/cart/cart';
 
+import { useGetCartByUserIdQuery } from '../../../services/product';
+
 import styles from './nav.module.css';
 
 export interface NavElement {
@@ -20,6 +22,8 @@ export type NavBarProps = {
 export function NavBar({ className, navItems }: NavBarProps) {
   const [numItemsInCart] = useState(1);
   const navigate = useNavigate();
+
+  const { data } = useGetCartByUserIdQuery(33);
 
   const navigateAndScroll = (path: string, name: string) => {
     navigate(path, { replace: true });
