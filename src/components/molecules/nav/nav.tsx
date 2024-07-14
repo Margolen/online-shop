@@ -4,6 +4,8 @@ import { scroller } from 'react-scroll';
 import { NavLink } from '../../atoms/navLink/navLink';
 import { Cart } from '../../atoms/cart/cart';
 
+import { useGetCartByUserIdQuery } from '../../../services/product';
+
 import styles from './nav.module.css';
 
 export interface NavElement {

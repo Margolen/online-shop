@@ -17,11 +17,12 @@ export const dummyJsonApi = createApi({
   }),
   endpoints: (builder) => ({
     getProductByName: builder.query({
-      query: (name: string) => `products/search/?q=${name}`,
+      query: (name: string) => `products/search/?q=${name}&limit=${12}`,
+    }),
+    getCartByUserId: builder.query({
+      query: (userId: number) => `carts/user/${userId}`,
     }),
   }),
 });
 
-// Export hooks for usage in functional components, which are
-// auto-generated based on the defined endpoints
-export const { useGetProductByNameQuery } = dummyJsonApi;
+export const { useGetProductByNameQuery, useGetCartByUserIdQuery } = dummyJsonApi;
