@@ -1,0 +1,24 @@
+.header {
+  color: #ffffff;
+  background-color: var(--base-background-color);
+}
+
+.header__bar {
+  display: flex;
+  align-items: center;
+  padding: 22px 0;
+}
+
+.logo {
+  font-size: 1.875rem;
+  font-weight: 700;
+}
+
+.nav {
+  margin-left: auto;
+}
+
+.nav li:last-child a:hover {
+  color: var(--navlink-base-color);
+  text-decoration: none;
+}

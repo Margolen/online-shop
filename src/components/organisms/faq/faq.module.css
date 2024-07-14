@@ -1,0 +1,20 @@
+.faq {
+  background-color: var(--base-background-color);
+}
+
+.faq__container {
+  display: grid;
+  place-items: center;
+  padding: 60px 0;
+}
+
+.faq__inner {
+  display: grid;
+  width: 880px;
+  gap: 20px;
+  border-bottom: 1px solid #ffffff;
+}
+
+.faq__title {
+  color: #ffffff;
+}

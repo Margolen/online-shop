@@ -1,0 +1,36 @@
+.accordion__item {
+  display: grid;
+  color: white;
+  border-top: 1px solid #ffffff;
+  padding: 25px 0;
+}
+
+.accordion__container {
+  display: flex;
+  flex-direction: column;
+}
+
+.accordion__question {
+  display: flex;
+  cursor: pointer;
+  border: 1px solid transparent;
+  justify-content: space-between;
+}
+
+.accordion__content {
+  font-weight: 600;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.accordion__button {
+  width: 25px;
+  height: 25px;
+  transform: rotate(45deg);
+  background-image: url('../../../assets/images/icons/cross.svg');
+  transition: transform 0.3s ease;
+}
+
+.accordion__button--open {
+  transform: rotate(0deg);
+}
