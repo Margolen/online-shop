@@ -10,17 +10,32 @@ import { Card } from '../../molecules/card/card';
 import { Container } from '../../templates/container/container';
 import { Button } from '../../atoms/button/button';
 
-import { useGetProductByNameQuery, Product } from '../../../services/product';
+import { useGetProductByNameQuery, Products } from '../../../services/product';
 
 import styles from './catalog.module.css';
 
 export function Catalog() {
   const navigate = useNavigate();
 
-  const [searchField, setSearchField] = useState('');
+  const itemToShow = 12;
 
-  const { data } = useGetProductByNameQuery(searchField);
-  const products = useMemo(() => (data?.products || []) as Product[], [data]);
+  const [searchField, setSearchField] = useState('');
+  const [limit, setLimit] = useState(itemToShow);
+
+  const { data } = useGetProductByNameQuery({
+    name: searchField,
+    skip: 0,
+    limit,
+  });
+
+  const response = useMemo(
+    () =>
+      (data || {
+        products: [],
+        total: 0,
+      }) as Products,
+    [data]
+  );
 
   const handleChangeSearchField = debounce((event: React.ChangeEvent<HTMLInputElement>) => {
     setSearchField(event.target.value);
@@ -38,7 +53,7 @@ export function Catalog() {
             onChange={handleChangeSearchField}
           />
           <div className={styles.catalog__table}>
-            {products.map((product) => (
+            {response.products.map((product) => (
               <Card
                 key={product.id}
                 product={product}
@@ -46,7 +61,14 @@ export function Catalog() {
               />
             ))}
           </div>
-          <Button className={styles.catalog__show_more}>Show more</Button>
+          {response.products.length < response.total && (
+            <Button
+              className={styles.catalog__show_more}
+              onClick={() => setLimit((prevLimit) => prevLimit + itemToShow)}
+            >
+              Show more
+            </Button>
+          )}
         </div>
       </Container>
     </Element>

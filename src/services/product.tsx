@@ -9,6 +9,11 @@ export type Product = {
   category: string;
 };
 
+export type Products = {
+  products: Product[];
+  total: number;
+};
+
 // Define a service using a base URL and expected endpoints
 export const dummyJsonApi = createApi({
   reducerPath: 'dummyJsonApi',
@@ -17,7 +22,7 @@ export const dummyJsonApi = createApi({
   }),
   endpoints: (builder) => ({
     getProductByName: builder.query({
-      query: (name: string) => `products/search/?q=${name}&limit=${12}`,
+      query: ({ name, skip, limit }) => `products/search/?q=${name}&skip=${skip}&limit=${limit}`,
     }),
     getCartByUserId: builder.query({
       query: (userId: number) => `carts/user/${userId}`,
