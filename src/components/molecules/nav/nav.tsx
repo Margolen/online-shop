@@ -1,10 +1,12 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { scroller } from 'react-scroll';
 import { NavLink } from '../../atoms/navLink/navLink';
 import { Cart } from '../../atoms/cart/cart';
 
-import { useGetCartByUserIdQuery } from '../../../services/product';
+import { useDispatch, useSelector } from 'react-redux';
+import { getCartsByUserId } from '../../../services/api';
+import { RootState, AppDispatch } from '../../../app/store';
 
 import styles from './nav.module.css';
 
@@ -20,10 +22,23 @@ export type NavBarProps = {
 };
 
 export function NavBar({ className, navItems }: NavBarProps) {
-  const [numItemsInCart] = useState(1);
+  const [numItemsInCart, setNumItemsInCart] = useState(0);
+  const [userId] = useState(33);
   const navigate = useNavigate();
+  const dispatch = useDispatch<AppDispatch>();
 
-  const { data } = useGetCartByUserIdQuery(33);
+  const { carts, total } = useSelector((state: RootState) => state.cart);
+
+  useEffect(() => {
+    dispatch(getCartsByUserId(userId));
+  }, [userId]);
+
+  useEffect(() => {
+    const firstCart = total !== 0 ? carts[0] : null;
+    if (firstCart) {
+      setNumItemsInCart(firstCart.totalProducts);
+    }
+  }, [carts, total]);
 
   const navigateAndScroll = (path: string, name: string) => {
     navigate(path, { replace: true });

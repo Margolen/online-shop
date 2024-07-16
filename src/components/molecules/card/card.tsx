@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 import { ButtonPanel } from '../buttonPanel/buttonPanel';
-import { Product } from '../../../services/product';
+import { Product } from '../../../services/api';
 
 import styles from './card.module.css';
 

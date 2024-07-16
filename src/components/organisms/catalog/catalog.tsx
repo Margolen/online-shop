@@ -10,7 +10,7 @@ import { Card } from '../../molecules/card/card';
 import { Container } from '../../templates/container/container';
 import { Button } from '../../atoms/button/button';
 
-import { useGetProductByNameQuery, Products } from '../../../services/product';
+import { useGetProductByNameQuery, Products } from '../../../services/api';
 
 import styles from './catalog.module.css';
 

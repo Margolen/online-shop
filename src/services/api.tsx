@@ -1,3 +1,4 @@
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
 export type Product = {
@@ -28,9 +29,31 @@ export type Cart = {
 };
 
 export type Carts = {
-  carts: Carts[];
+  carts: Cart[];
   total: number;
 };
+
+export const getCartsByUserId = createAsyncThunk<Carts, number>(
+  'cart/getCartsByUserId',
+  async (userId) =>
+    await fetch(`https://dummyjson.com/carts/user/${userId}`).then((data) => data.json())
+);
+
+const cartSlice = createSlice({
+  name: 'cart',
+  initialState: {
+    carts: [] as Cart[],
+    total: 0,
+  },
+  reducers: {},
+  extraReducers: (builder) => {
+    builder.addCase(getCartsByUserId.fulfilled, (state, { payload }) => {
+      Object.assign(state, payload);
+    });
+  },
+});
+
+export const cartReducer = cartSlice.reducer;
 
 // Define a service using a base URL and expected endpoints
 export const dummyJsonApi = createApi({
@@ -42,10 +65,7 @@ export const dummyJsonApi = createApi({
     getProductByName: builder.query({
       query: ({ name, skip, limit }) => `products/search/?q=${name}&skip=${skip}&limit=${limit}`,
     }),
-    getCartByUserId: builder.query({
-      query: (userId: number) => `carts/user/${userId}`,
-    }),
   }),
 });
 
-export const { useGetProductByNameQuery, useGetCartByUserIdQuery } = dummyJsonApi;
+export const { useGetProductByNameQuery } = dummyJsonApi;
